@@ -1,0 +1,335 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		49AFA63B219C7EB60072B0CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49AFA63A219C7EB60072B0CA /* Foundation.framework */; };
+		49AFA645219C7EB60072B0CA /* bilibili_universal_cast_always.mm in Sources */ = {isa = PBXBuildFile; fileRef = 49AFA644219C7EB60072B0CA /* bilibili_universal_cast_always.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		49AFA637219C7EB60072B0CA /* bilibili-universal-cast-always.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = "bilibili-universal-cast-always.dylib"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49AFA63A219C7EB60072B0CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		49AFA63F219C7EB60072B0CA /* control.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = control.txt; path = Package/DEBIAN/control.txt; sourceTree = "<group>"; };
+		49AFA640219C7EB60072B0CA /* control */ = {isa = PBXFileReference; lastKnownFileType = text; name = control; path = Package/DEBIAN/control; sourceTree = "<group>"; };
+		49AFA642219C7EB60072B0CA /* PackageVersion.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PackageVersion.plist; sourceTree = "<group>"; };
+		49AFA643219C7EB60072B0CA /* bilibili-universal-cast-always-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bilibili-universal-cast-always-Prefix.pch"; sourceTree = "<group>"; };
+		49AFA644219C7EB60072B0CA /* bilibili_universal_cast_always.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = bilibili_universal_cast_always.mm; sourceTree = "<group>"; };
+		49AFA649219C7EB60072B0CA /* bilibili_universal_cast_always.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = bilibili_universal_cast_always.plist; path = Package/Library/MobileSubstrate/DynamicLibraries/bilibili_universal_cast_always.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49AFA633219C7EB60072B0CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49AFA63B219C7EB60072B0CA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49AFA62D219C7EB60072B0CA = {
+			isa = PBXGroup;
+			children = (
+				49AFA63C219C7EB60072B0CA /* bilibili-universal-cast-always */,
+				49AFA639219C7EB60072B0CA /* Frameworks */,
+				49AFA638219C7EB60072B0CA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		49AFA638219C7EB60072B0CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49AFA637219C7EB60072B0CA /* bilibili-universal-cast-always.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49AFA639219C7EB60072B0CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49AFA63A219C7EB60072B0CA /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49AFA63C219C7EB60072B0CA /* bilibili-universal-cast-always */ = {
+			isa = PBXGroup;
+			children = (
+				49AFA644219C7EB60072B0CA /* bilibili_universal_cast_always.mm */,
+				49AFA63D219C7EB60072B0CA /* Package */,
+				49AFA641219C7EB60072B0CA /* Supporting Files */,
+			);
+			path = "bilibili-universal-cast-always";
+			sourceTree = "<group>";
+		};
+		49AFA63D219C7EB60072B0CA /* Package */ = {
+			isa = PBXGroup;
+			children = (
+				49AFA63E219C7EB60072B0CA /* DEBIAN */,
+				49AFA646219C7EB60072B0CA /* Library */,
+			);
+			name = Package;
+			sourceTree = "<group>";
+		};
+		49AFA63E219C7EB60072B0CA /* DEBIAN */ = {
+			isa = PBXGroup;
+			children = (
+				49AFA63F219C7EB60072B0CA /* control.txt */,
+				49AFA640219C7EB60072B0CA /* control */,
+			);
+			name = DEBIAN;
+			sourceTree = "<group>";
+		};
+		49AFA641219C7EB60072B0CA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49AFA642219C7EB60072B0CA /* PackageVersion.plist */,
+				49AFA643219C7EB60072B0CA /* bilibili-universal-cast-always-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49AFA646219C7EB60072B0CA /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				49AFA647219C7EB60072B0CA /* MobileSubstrate */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		49AFA647219C7EB60072B0CA /* MobileSubstrate */ = {
+			isa = PBXGroup;
+			children = (
+				49AFA648219C7EB60072B0CA /* DynamicLibraries */,
+			);
+			name = MobileSubstrate;
+			sourceTree = "<group>";
+		};
+		49AFA648219C7EB60072B0CA /* DynamicLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				49AFA649219C7EB60072B0CA /* bilibili_universal_cast_always.plist */,
+			);
+			name = DynamicLibraries;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		49AFA634219C7EB60072B0CA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		49AFA636219C7EB60072B0CA /* bilibili-universal-cast-always */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49AFA64C219C7EB60072B0CA /* Build configuration list for PBXNativeTarget "bilibili-universal-cast-always" */;
+			buildPhases = (
+				49AFA632219C7EB60072B0CA /* Sources */,
+				49AFA633219C7EB60072B0CA /* Frameworks */,
+				49AFA634219C7EB60072B0CA /* Headers */,
+				49AFA635219C7EB60072B0CA /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "bilibili-universal-cast-always";
+			productName = "bilibili-universal-cast-always";
+			productReference = 49AFA637219C7EB60072B0CA /* bilibili-universal-cast-always.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49AFA62E219C7EB60072B0CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				TargetAttributes = {
+					49AFA636219C7EB60072B0CA = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 49AFA631219C7EB60072B0CA /* Build configuration list for PBXProject "bilibili-universal-cast-always" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 49AFA62D219C7EB60072B0CA;
+			productRefGroup = 49AFA638219C7EB60072B0CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49AFA636219C7EB60072B0CA /* bilibili-universal-cast-always */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		49AFA635219C7EB60072B0CA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/iOSOpenDev/bin/iosod --xcbp";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49AFA632219C7EB60072B0CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49AFA645219C7EB60072B0CA /* bilibili_universal_cast_always.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		49AFA64A219C7EB60072B0CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/frameworks/**",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
+				iOSOpenDevPath = /opt/iOSOpenDev;
+			};
+			name = Debug;
+		};
+		49AFA64B219C7EB60072B0CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/frameworks/**",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				iOSOpenDevPath = /opt/iOSOpenDev;
+			};
+			name = Release;
+		};
+		49AFA64D219C7EB60072B0CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "bilibili-universal-cast-always/bilibili-universal-cast-always-Prefix.pch";
+				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = "";
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Debug;
+		};
+		49AFA64E219C7EB60072B0CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "bilibili-universal-cast-always/bilibili-universal-cast-always-Prefix.pch";
+				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = "";
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49AFA631219C7EB60072B0CA /* Build configuration list for PBXProject "bilibili-universal-cast-always" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49AFA64A219C7EB60072B0CA /* Debug */,
+				49AFA64B219C7EB60072B0CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49AFA64C219C7EB60072B0CA /* Build configuration list for PBXNativeTarget "bilibili-universal-cast-always" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49AFA64D219C7EB60072B0CA /* Debug */,
+				49AFA64E219C7EB60072B0CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49AFA62E219C7EB60072B0CA /* Project object */;
+}
