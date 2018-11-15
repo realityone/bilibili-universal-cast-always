@@ -11,68 +11,49 @@
 
 #import <Foundation/Foundation.h>
 #import "CaptainHook/CaptainHook.h"
-
-// Objective-C runtime hooking using CaptainHook:
-//   1. declare class using CHDeclareClass()
-//   2. load class using CHLoadClass() or CHLoadLateClass() in CHConstructor
-//   3. hook method using CHOptimizedMethod()
-//   4. register hook using CHHook() in CHConstructor
-//   5. (optionally) call old method using CHSuper()
-
-
-@interface bilibili_universal_cast_always : NSObject
-
-@end
-
-@implementation bilibili_universal_cast_always
-
--(id)init
-{
-	if ((self = [super init]))
-	{
-	}
-
-    return self;
-}
-
-@end
+//
+//#ifdef DEBUG
+//#import "Cycript/Cycript.h"
+//#define CYCRIPT_PORT 8888
+//CHDeclareClass(UIApplication);
+//CHDeclareClass(BFCApplicationDelegate);
+//CHOptimizedMethod2(self, void, BFCApplicationDelegate, application, UIApplication *, application, didFinishLaunchingWithOptions, NSDictionary *, options)
+//{
+//    CHSuper2(BFCApplicationDelegate, application, application, didFinishLaunchingWithOptions, options);
+//
+//    NSLog(@"Starting Cycript");
+//    CYListenServer(CYCRIPT_PORT);
+//}
+//CHConstructor
+//{
+//    @autoreleasepool {
+//        NSLog(@"Starting Cycript server");
+//        CHLoadLateClass(BFCApplicationDelegate);
+//        CHLoadLateClass(UIApplication);
+//        CHHook2(BFCApplicationDelegate, application, didFinishLaunchingWithOptions);
+//    }
+//}
+//#endif
 
 CHDeclareClass(BBPlayerCastHelper);
-CHDeclareClass(BBPlayerCustomComponnetPreferences);
-
-CHPropertyGetter(BBPlayerCastHelper, showBiliCast, bool)
+CHOptimizedClassMethod0(self, id, BBPlayerCastHelper, sharedHelper)
 {
-    return true;
+    static dispatch_once_t once;
+    BBPlayerCastHelper *obj = (BBPlayerCastHelper *)CHSuper0(BBPlayerCastHelper, sharedHelper);
+    dispatch_once(&once, ^{
+        NSLog(@"Patch screen cast switches");
+        [obj setShowBiliCast: true];
+        [obj setSupportCast: true];
+        [obj setShowDanmakuWhenBiliCast: true];
+    });
+    return obj;
 }
-
-CHPropertyGetter(BBPlayerCastHelper, supportCast, bool)
+CHConstructor
 {
-    return true;
-}
-
-CHPropertyGetter(BBPlayerCastHelper, showDanmakuWhenBiliCast, bool)
-{
-    return true;
-}
-
-CHPropertyGetter(BBPlayerCustomComponnetPreferences, screenCastAvailable, bool)
-{
-    return true;
-}
-
-CHConstructor // code block that runs immediately upon load
-{
-	@autoreleasepool
-	{
+    @autoreleasepool {
         NSLog(@"Injecting to bili-universal and enable screen cast always");
-
         CHLoadLateClass(BBPlayerCastHelper);
-        CHLoadLateClass(BBPlayerCustomComponnetPreferences);
-        
-        CHHook(0, BBPlayerCastHelper, showBiliCast);
-        CHHook(0, BBPlayerCastHelper, supportCast);
-        CHHook(0, BBPlayerCastHelper, showDanmakuWhenBiliCast);
-
-        CHHook(0, BBPlayerCustomComponnetPreferences, screenCastAvailable);
+        CHHook0(BBPlayerCastHelper, sharedHelper);
     }
 }
+
