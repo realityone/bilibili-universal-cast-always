@@ -48,12 +48,26 @@ CHOptimizedClassMethod0(self, id, BBPlayerCastHelper, sharedHelper)
     });
     return obj;
 }
+
+CHDeclareClass(BBPegasusCardPool);
+CHOptimizedClassMethod0(self, NSDictionary *, BBPegasusCardPool, allModelClassDict)
+{
+    NSDictionary *obj = (NSDictionary *)CHSuper0(BBPegasusCardPool, allModelClassDict);
+    NSMutableDictionary *mutObj = [obj mutableCopy];
+    [mutObj removeObjectForKey:@"cm_v2"];
+    obj = [NSDictionary dictionaryWithDictionary:mutObj];
+    return obj;
+}
+
 CHConstructor
 {
     @autoreleasepool {
         NSLog(@"Injecting to bili-universal and enable screen cast always");
         CHLoadLateClass(BBPlayerCastHelper);
+        CHLoadLateClass(BBPegasusCardPool);
+        
         CHHook0(BBPlayerCastHelper, sharedHelper);
+        CHHook0(BBPegasusCardPool, allModelClassDict);
     }
 }
 
