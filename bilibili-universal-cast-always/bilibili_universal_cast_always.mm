@@ -35,11 +35,11 @@
 //}
 //#endif
 
-CHDeclareClass(BBPlayerCastHelper);
-CHOptimizedClassMethod0(self, id, BBPlayerCastHelper, sharedHelper)
+CHDeclareClass(BBPlayerCastFinder);
+CHOptimizedClassMethod0(self, id, BBPlayerCastFinder, sharedFinder)
 {
     static dispatch_once_t once;
-    BBPlayerCastHelper *obj = (BBPlayerCastHelper *)CHSuper0(BBPlayerCastHelper, sharedHelper);
+    BBPlayerCastFinder *obj = (BBPlayerCastFinder *)CHSuper0(BBPlayerCastFinder, sharedFinder);
     dispatch_once(&once, ^{
         NSLog(@"Patch screen cast switches");
         [obj setShowBiliCast: true];
@@ -59,15 +59,23 @@ CHOptimizedClassMethod0(self, NSDictionary *, BBPegasusCardPool, allModelClassDi
     return obj;
 }
 
+CHDeclareClass(BFCTeenagersEntranceAlertView);
+CHOptimizedClassMethod0(self, BOOL, BFCTeenagersEntranceAlertView, isNeedShowTeenagersAlert)
+{
+    return FALSE;
+}
+
 CHConstructor
 {
     @autoreleasepool {
         NSLog(@"Injecting to bili-universal and enable screen cast always");
-        CHLoadLateClass(BBPlayerCastHelper);
+        CHLoadLateClass(BBPlayerCastFinder);
         CHLoadLateClass(BBPegasusCardPool);
+        CHLoadLateClass(BFCTeenagersEntranceAlertView);
         
-        CHHook0(BBPlayerCastHelper, sharedHelper);
+        CHHook0(BBPlayerCastFinder, sharedFinder);
         CHHook0(BBPegasusCardPool, allModelClassDict);
+        CHHook0(BFCTeenagersEntranceAlertView, isNeedShowTeenagersAlert);
     }
 }
 
